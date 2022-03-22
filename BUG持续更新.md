@@ -25,3 +25,7 @@
 
 1. p88 5.3.2代码的可维护性 83行和175行（根据p87的define）THICHKNESS改为THICKNESS
 2. p107  第二代码块 spSnack与p108 35行spSnackHead冲突
+
+## 3.22
+
+1. 截止7.2.6 游戏I/O频率的调整，delay的初始化为0，但是在前面的代码来看，并未在initial()处将x和y的值赋给spSnackHead，这将导致游戏界面开始前会有0.5s左右的时间蛇头在左上角出现。	解决措施：1 在initial的位置对蛇头进行初始化 2 delay可以初始化为9，在第一轮循环时就能执行Logic()里面的赋值
